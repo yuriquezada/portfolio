@@ -1036,7 +1036,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	margin-bottom: 3.6rem;
 	position: relative;
 }
 .section-intro h1 {
@@ -2243,8 +2242,8 @@ header .logo a {
  */
 #contact {
 	background: #151515;
-	padding-top: 12rem;
-	padding-bottom: 7.2rem;
+	padding-top: 5rem;
+	padding-bottom: 1rem;
 }
 #contact .section-intro h1 {
 	color: white;
@@ -2589,3 +2588,8 @@ footer .copyright span:last-child::after {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+.contact-info{
+	display: flex;
+ justify-content: space-evenly
+}
