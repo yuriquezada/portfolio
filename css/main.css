@@ -1104,7 +1104,7 @@
 	 min-height: 66px;
  }
  header .top-bar {
-	 display: block;
+		display: flex;
 	 background: #000000;
 	 min-width: 100px;
 	 min-height: 66px;
@@ -1112,10 +1112,7 @@
 	 top: 0;
  }
  header .logo {
-	 float: left;
-	 margin: 15px;
-	 margin-left: 0px;
-	 margin-right: 20px ;
+	 margin: 20px;
 	 position: relative;
  }
  header .logo a {
@@ -1223,9 +1220,6 @@
 	 -ms-transform: rotate(-45deg);
 	 transform: rotate(-45deg);
  }
- 
-
- 
 
  .main-navigation > li {
 	 display: block;
@@ -1556,32 +1550,32 @@
 		 width: 90%;
 	 }
  }
+
+ @media only screen and (min-width:651px){
+	.menu-toggle{
+		display: none
+	}
+	.main-navigation{
+		display: block
+	}
+ }
+
  @media only screen and (max-width:650px){
  
 	header .top-bar {
 		left: 0px;
 	}
 	
-	 /* navigation panel */
-	 #main-nav-wrap {
+	/* navigation panel */
+	#main-nav-wrap {
 		display: block;
 		width: 100%;
 		font-family: "poppins-medium", sans-serif;
 		font-size: 1.5rem;
 		position: absolute;
-		 top: 100%;
-		 left: 0;
+		top: 100%;
+		left: 0;
 	}
- /* navigation panel */
- #main-nav-wrap {
-	display: block;
-	width: 100%;
-	font-family: "poppins-medium", sans-serif;
-	font-size: 1.5rem;
-	position: absolute;
-	 top: 100%;
-	 left: 0;
-}
 	/* dropdown nav */
 	.main-navigation {
 		background: #000000;
@@ -1590,9 +1584,9 @@
 		width: 100%;
 		height: auto;
 		clear: both;
-		display: flex;
+		display: none;
 		flex-wrap: nowrap;
-		display: none
+		/* display: none */
 	}
  }
  
