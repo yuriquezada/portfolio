@@ -1101,11 +1101,12 @@
  }
  header .row {
 	 position: relative;
-	 min-height: 66px;
+	 min-height: 80px;
  }
  header .top-bar {
 		display: flex;
 	 background: #000000;
+	 opacity: .80;
 	 min-width: 100px;
 	 min-height: 66px;
 	 position: absolute;
@@ -1459,7 +1460,7 @@
 	*/
  #about {
 	 background: #FFFFFF;
-	 padding-top: 12rem;
+	 padding-top: 20%;
 	 padding-bottom: 15rem;
 	 height: 100vh;
  }
@@ -1531,13 +1532,19 @@
 	* about
 	* ------------------------------------------------------------------- 
 	*/
+
+	@media only screen and (min-width:850px){
+		#about{
+			padding-top: 23vh
+		}
+	 }
  @media only screen and (max-width:1024px) {
 	 .intro-info {
 		 margin-right: 0;
 		 margin-left: 0;
 	 }
  }
- 
+
  @media only screen and (max-width:850px){
 	 .profile{
 		 flex-direction: column;
@@ -1546,18 +1553,16 @@
 	 .profile p{
 		 margin: 20px 10px 0px 10px
 	 }
-	 .profile img{
+
+	 /* .profile img{
 		 width: 90%;
-	 }
+	 } */
  }
 
- @media only screen and (min-width:651px){
-	.menu-toggle{
-		display: none
-	}
-	.main-navigation{
-		display: block
-	}
+ @media only screen and (max-width:500px){
+	 .profile img{
+		width: 390px;;
+	 }
  }
 
  @media only screen and (max-width:650px){
@@ -1581,14 +1586,48 @@
 		background: #000000;
 		padding: 20px;
 		margin: 0;
-		width: 100%;
+		/* width: 100%; */
 		height: auto;
 		clear: both;
 		display: none;
 		flex-wrap: nowrap;
-		/* display: none */
 	}
  }
+
+ @media only screen and (min-width:651px){
+	#main-nav-wrap{
+		width: 100%
+	}
+	header .top-bar{
+		width: 100%;
+		padding: 0px 5% 0px 5% 
+
+	}
+ 
+ header .row{
+		margin: 0%;
+	}
+	.menu-toggle{
+		display: none
+	}
+	.main-navigation{
+		display: flex;
+		width: 100%;
+		height: 100%;
+		margin: 0%
+	}
+	.main-navigation li{
+		display: flex;
+		justify-content: center;
+		align-items: center
+	}
+ }
+ @media only screen and (min-width:1200px){
+	header .top-bar{
+		padding: 0px 13% 0px 13% 
+	}
+ }
+
  
  @media only screen and (max-width:768px) {
 	 .intro-info img {
