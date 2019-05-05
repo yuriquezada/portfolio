@@ -388,6 +388,11 @@ form,
 img.pull-right {
 	margin: .9rem 0 0 2.4rem;
 }
+.profile{
+	display: flex;
+	width: 100%;
+	align-content: center
+}
 img.pull-left {
 	margin: .9rem 2.4rem 0 0;
 }
@@ -1104,7 +1109,6 @@ header .top-bar {
 	min-width: 100px;
 	min-height: 66px;
 	position: absolute;
-	left: 90px;
 	top: 0;
 }
 header .logo {
@@ -1227,8 +1231,7 @@ header .logo a {
 	font-family: "poppins-medium", sans-serif;
 	font-size: 1.5rem;
 	position: absolute;
-	top: 100%;
-	left: 0;
+	left: 100%;
 }
 
 /* dropdown nav */
@@ -1239,13 +1242,16 @@ header .logo a {
 	width: 100%;
 	height: auto;
 	clear: both;
-	display: none;
+	display: flex;
+	flex-wrap: nowrap;
+	width: 400%;
 }
 .main-navigation > li {
 	display: block;
 	height: auto;
 	text-align: left;
 	padding: 0;
+	flex-grow: 1;
 }
 .main-navigation li a {
 	display: block;
@@ -1269,26 +1275,9 @@ header .logo a {
  * header styles
  * --------------------------------------------------------------- 
  */
-@media only screen and (max-width:1024px) {
-	header .top-bar {
-		left: 60px;
-	}
-}
-@media only screen and (max-width:768px) {
-	header .top-bar {
-		left: 50px;
-	}
-}
-@media only screen and (max-width:600px) {
-	header .top-bar {
-		left: 35px;
-	}
-}
-@media only screen and (max-width:400px) {
-	header .top-bar {
-		left: 25px;
-	}
-}
+
+
+
 
 
 /** 
@@ -1317,7 +1306,7 @@ header .logo a {
 	width: 100%;
 	height: 100%;
 	background: #111111;
-	opacity: .85;
+	opacity: .80;
 }
 
 .intro-content {
@@ -1497,6 +1486,7 @@ header .logo a {
 	background: #FFFFFF;
 	padding-top: 12rem;
 	padding-bottom: 15rem;
+	height: 100vh;
 }
 #about .section-intro {
 	margin-bottom: 3rem;
@@ -1533,6 +1523,12 @@ header .logo a {
 }
 .info-yuri{
 	font-family: 'Raleway', sans-serif;
+	margin-left: 50px;
+	margin-bottom: 0%;
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+	justify-content: center
 }
 .about-content .info-list li span {
 	display: block;
@@ -1566,6 +1562,35 @@ header .logo a {
 		margin-left: 0;
 	}
 }
+
+@media only screen and (max-width:850px){
+	.profile{
+		flex-direction: column;
+		align-items: center
+	}
+	.profile p{
+		margin: 20px 10px 0px 10px
+	}
+	.profile img{
+		width: 90%;
+	}
+}
+@media only screen and (max-width:650px){
+
+		header .top-bar {
+			left: 0px;
+		}
+
+	#main-nav-wrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+	}
+	.main-navigation{
+		display: none
+	}
+}
+
 @media only screen and (max-width:768px) {
 	.intro-info img {
 		height: 7.8rem;
