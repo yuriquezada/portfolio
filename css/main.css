@@ -55,7 +55,35 @@
 		 justify-content: center;
 		 align-items: center;
  }
- 
+ .skills{
+	display: flex;
+	padding: 40px;
+	justify-content: center
+ }
+ .skills article{
+	 display: flex;
+	flex-grow: 1;
+	align-items: center;
+	flex-direction: column;
+	height: 50vh;
+ }
+ .skills ul{
+	 margin-left: 0%
+ }
+ .skills li{
+	 list-style: none;
+	 font-size: 20px;
+	 display: flex;
+	 align-items: center;
+	 margin: 15px
+ }
+ .skills p{
+	 margin: 0px 10px 0px 10px
+ }
+
+ .grey-section{
+	 height: 100vh;
+ }
  @media only screen and (max-width:1024px) {
 	 html {
 		 font-size: 9.411764705882353px;
@@ -1595,6 +1623,9 @@
  }
 
  @media only screen and (max-width:500px){
+	 .skills{
+		 padding: 3%
+	 }
 	 #about{
 		 margin-top: 9%
 	 }
@@ -1667,6 +1698,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center
+	}
+ }
+
+ @media only screen and (min-width:1150px){
+	.skills article{
+		max-width: 500px;
 	}
  }
  @media only screen and (min-width:1200px){
