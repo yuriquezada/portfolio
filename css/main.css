@@ -70,12 +70,17 @@
  .skills ul{
 	 margin-left: 0%
  }
+ .development{
+	 display: flex;
+	 flex-wrap: wrap
+ }
  .skills li{
 	 list-style: none;
 	 font-size: 20px;
 	 display: flex;
 	 align-items: center;
-	 margin: 15px
+	 margin: 15px; 
+	 width: 200px
  }
  .skills p{
 	 margin: 0px 10px 0px 10px
