@@ -57,22 +57,27 @@
  }
  .skills{
 	display: flex;
-	padding: 40px;
-	justify-content: center
+	padding: 20px 40px 20px 40px;
+	justify-content: center;
+	flex-wrap: wrap
  }
  .skills article{
 	 display: flex;
 	flex-grow: 1;
 	align-items: center;
 	flex-direction: column;
-	height: 50vh;
+
  }
  .skills ul{
-	 margin-left: 0%
+	 margin-left: 0%;
+	 margin-bottom: 0%;
+	 flex-wrap: wrap;
+	 max-width: 400px;
  }
  .development{
 	 display: flex;
-	 flex-wrap: wrap
+	 flex-wrap: wrap;
+	 justify-content: center
  }
  .skills li{
 	 list-style: none;
@@ -80,15 +85,15 @@
 	 display: flex;
 	 align-items: center;
 	 margin: 15px; 
-	 width: 200px
+	 width: 170px
  }
  .skills p{
 	 margin: 0px 10px 0px 10px
  }
 
- .grey-section{
+ /* .grey-section{
 	 height: 100vh;
- }
+ } */
  @media only screen and (max-width:1024px) {
 	 html {
 		 font-size: 9.411764705882353px;
@@ -1134,7 +1139,7 @@
  }
  header .row {
 	 position: relative;
-	 min-height: 80px;
+	 min-height: 50px;
  }
  header .top-bar {
 		display: flex;
@@ -1142,11 +1147,12 @@
 	 opacity: .80;
 	 min-width: 100px;
 	 min-height: 66px;
+	 height: 50px;
 	 position: absolute;
 	 top: 0;
  }
  header .logo {
-	 margin: 20px;
+	 margin: 13px;
 	 position: relative;
  }
  header .logo a {
@@ -1643,9 +1649,9 @@
  }
 
  @media only screen and (max-width:400px){
-	#about{
+	/* #about{
 	padding-top: 22%
-	}
+	} */
 }
 
  @media only screen and (max-width:650px){
@@ -1764,7 +1770,7 @@
 	* ------------------------------------------------------------------- 
 	*/
  #resume {
-	 padding-top: 12rem;
+	 padding-top: 85px;
 	 padding-bottom: 12rem;
  }
  
