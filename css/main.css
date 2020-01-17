@@ -1695,7 +1695,7 @@ input::-moz-focus-inner {
 }
 
 .header-logo img {
-  width: 130px;
+  width: 40px;
   height: 37px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -2845,7 +2845,7 @@ html.no-csstransitions .home-content__main {
   background-color: #FFFFFF;
   padding: .6rem 1.2rem;
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   -webkit-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
@@ -2891,9 +2891,26 @@ html.no-csstransitions .home-content__main {
   transform: scale(1);
 }
 
+.btn-border{
+  position: relative;
+    background: transparent !important;
+    border: 2px solid #FC0048;
+    margin: 0 20px;
+    /* border-color: #FC0048 !important; */
+    color: #FFFFFF !important;
+    height: 6.6rem;
+    line-height: 6.2rem;
+    padding: 2rem 3rem;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn-border::after{
+  content: none!important
+}
 .item-folio:hover .item-folio__project-link {
   opacity: 1;
   visibility: visible;
+  display: block;
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2902,6 +2919,7 @@ html.no-csstransitions .home-content__main {
 .item-folio:hover .item-folio__text {
   opacity: 1;
   visibility: visible;
+  display: block;
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);

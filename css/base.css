@@ -1,3 +1,5 @@
+
+
 /* =================================================================== 
  *
  *  Stellar v1.0 Base Stylesheet
@@ -730,6 +732,9 @@ textarea {
   width: 50%;
 }
 
+
+
+
 /**
  * Clearing for block grid columns. Allow columns with 
  * different heights to align properly.
@@ -738,7 +743,8 @@ textarea {
 .block-1-5 .col-block:nth-child(5n+1),
 .block-1-4 .col-block:nth-child(4n+1),
 .block-1-3 .col-block:nth-child(3n+1),
-.block-1-2 .col-block:nth-child(2n+1) {
+.block-1-2 .col-block:nth-child(2n+1),
+.block-1-1 .col-block:nth-child(1n+1)  {
   clear: both;
 }
 
@@ -949,3 +955,77 @@ textarea {
 }
 
 /*# sourceMappingURL=base.css.map */
+#about{
+  margin-bottom: 0
+}
+.about-text .flowers{
+  width: 30%
+}
+.about-process{
+  display: flex
+}
+.col-1-about{
+  width: 70%;
+  /* padding-top: 8% */
+}
+.col-2-about{
+  width: 30%
+}
+.mb-0{
+  margin-bottom: 0!important
+}
+.h-100{
+  height: 100%!important;
+}
+.w-100{
+  width: 100%!important;
+}
+.m-0{
+  margin: 0!important
+}
+.pb-0{
+  padding-bottom:  0!important
+}
+@media only screen and (max-width:1150px){
+  .col-1-about{
+    width: 50%;
+    /* padding-top: 5%; */
+    padding-left: 5%
+  }
+  .col-2-about{
+    width: 50%
+  }
+  .flowers{
+    display: none
+  }
+}
+@media only screen and (max-width:930px){
+  .col-1-about{
+    width: 50%;
+    padding-top: 0%;
+    padding-left: 5%
+  }
+  .col-2-about{
+    width: 50%
+  }
+  #about{
+    margin-bottom: 3.6rem;
+  }
+  
+}
+@media only screen and (max-width:870px){
+
+  .col-1-about{
+    width: 100%;
+    padding-left: 5%
+  }
+  .col-2-about{
+    width: 70%;
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .about-process{
+    flex-direction: column
+  }
+
+}
