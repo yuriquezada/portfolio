@@ -3708,7 +3708,7 @@ footer a:visited {
  * ------------------------------------------------------------------- */
 .cl-go-top {
   position: absolute;
-  top: -1px;
+  top: 900px;
   right: 6rem;
   z-index: 600;
 }

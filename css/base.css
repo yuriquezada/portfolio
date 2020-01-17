@@ -463,7 +463,7 @@ textarea {
 
 .col-four,
 .col-1-3 {
-  width: 33.33333%;
+  width: 50%;
 }
 
 .col-five {
@@ -1028,4 +1028,56 @@ textarea {
     flex-direction: column
   }
 
+}
+
+.skills {
+  display: flex;
+  padding: 20px 40px 20px 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff
+}
+
+@media only screen and (min-width: 1150px){
+  .skills article {
+    max-width: 500px;
+}
+}
+
+.skills article {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    flex-direction: column;
+}
+.skills h4{
+  color: #fff
+}
+.skills ul {
+  margin-left: 0%;
+  margin-bottom: 0%;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.development {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.skills li {
+  list-style: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  width: 170px;
+}
+ul li {
+  padding-left: .4rem;
+}
+
+.skills p {
+  margin: 0px 10px 0px 10px;
+  font-family: "Montserrat", sans-serif;
 }
