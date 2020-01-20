@@ -1008,9 +1008,9 @@ textarea {
   .col-2-about{
     width: 50%
   }
-  #about{
+  /* #about{
     margin-bottom: 3.6rem;
-  }
+  } */
   
 }
 @media only screen and (max-width:870px){
