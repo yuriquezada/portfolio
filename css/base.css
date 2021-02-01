@@ -1040,8 +1040,8 @@ textarea {
 
 @media only screen and (min-width: 1150px){
   .skills article {
-    max-width: 500px;
-}
+      max-width: 500px;
+  }
 }
 
 .skills article {
@@ -1060,7 +1060,7 @@ textarea {
   max-width: 400px;
 }
 
-.development {
+.development, .design {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1072,6 +1072,11 @@ textarea {
   align-items: center;
   margin: 15px;
   width: 170px;
+}
+
+.skills svg{
+  max-width: 35px;
+  max-height: 35px;
 }
 ul li {
   padding-left: .4rem;
