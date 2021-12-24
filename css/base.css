@@ -1,173 +1,147 @@
-
-
 /* =================================================================== 
  *
- *  Stellar v1.0 Base Stylesheet
- *  05-22-2018
+ *  Yuri v1.0 Base Stylesheet
+ *  08-13-2016
  *  ------------------------------------------------------------------
  *
  *  TOC:
- *  # imports
- *  # normalize
- *  # basic/base setup styles
- *    ## Media
- *    ## Typography resets 
- *    ## links
- *    ## inputs
- *  # grid
- *    ## medium size devices
- *    ## tablets
- *    ## mobile devices
- *    ## small mobile devices
- *  # block grids
- *    ## medium size devices
- *    ## tablets
- *    ## mobile devices
- *  # MISC
+ *  01. reset
+ *  02. basic/base setup styles
+ *  03. grid
+ *  04. block grids
+ *  05. MISC
  *
  * =================================================================== */
 
 
-
 /* ===================================================================
- * # imports 
- *
- * ------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Merriweather:300,400,400i,700|Libre+Baskerville:700");
-@import url("font-awesome/css/fontawesome-all.css");
-
-
-
-/* ===================================================================
- * # normalize
- * normalize.css v5.0.0 | MIT License |
- * github.com/necolas/normalize.css
+ *  01. reset - normalize.css v3.0.2 | MIT License | git.io/normalize
  *
  * ------------------------------------------------------------------- */
 html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
+	margin: 0;
 }
 
 article,
 aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
+details,
 figcaption,
 figure,
-main {
-  display: block;
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
 }
 
-figure {
-  margin: 1em 40px;
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
 }
 
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
+audio:not([controls]) {
+	display: none;
+	height: 0;
 }
 
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
+[hidden],
+template {
+	display: none;
 }
 
 a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
+	background: transparent;
 }
 
 a:active,
 a:hover {
-  outline-width: 0;
+	outline: 0;
 }
 
 abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
+	border-bottom: 1px dotted;
 }
 
 b,
 strong {
-  font-weight: inherit;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+	font-weight: bold;
 }
 
 dfn {
-  font-style: italic;
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
 }
 
 mark {
-  background-color: #ff0;
-  color: #000;
+	background: #ff0;
+	color: #000;
 }
 
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
-audio,
-video {
-  display: inline-block;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
+sub {
+	bottom: -0.25em;
 }
 
 img {
-  border-style: none;
+	border: 0;
 }
 
 svg:not(:root) {
-  overflow: hidden;
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
 }
 
 button,
@@ -175,218 +149,195 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
+	color: inherit;
+	font: inherit;
+	margin: 0;
 }
 
-button,
-input {
-  overflow: visible;
+button {
+	overflow: visible;
 }
 
 button,
 select {
-  text-transform: none;
+	text-transform: none;
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
 }
 
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
 }
 
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
-
-progress {
-  display: inline-block;
-  vertical-align: baseline;
+	border: 0;
+	padding: 0;
 }
 
 textarea {
-  overflow: auto;
+	overflow: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
+optgroup {
+	font-weight: bold;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
+td,
+th {
+	padding: 0;
 }
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-details,
-menu {
-  display: block;
-}
-
-summary {
-  display: list-item;
-}
-
-canvas {
-  display: inline-block;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
-}
-
 
 
 /* ===================================================================
- * # basic/base setup styles
+ *  02. basic/base setup styles - (_basic.scss)
  *
  * ------------------------------------------------------------------- */
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
+	font-size: 62.5%;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  font-weight: normal;
-  line-height: 1;
-  word-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: none;
+	font-weight: normal;
+	line-height: 1;
+	text-rendering: optimizeLegibility;
+	word-wrap: break-word;
+	-webkit-overflow-scrolling: touch;
+	-webkit-text-size-adjust: none;
 }
 
 body,
 input,
 button {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* ------------------------------------------------------------------- 
- * ## Media
+ * Media - (_basic.scss)
  * ------------------------------------------------------------------- */
 img,
 video {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 /* ------------------------------------------------------------------- 
- * ## Typography resets 
+ * Typography resets - (_basic.scss)
  * ------------------------------------------------------------------- */
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  -webkit-font-smoothing: auto;
-  -webkit-font-smoothing: antialiased;
-  -webkit-font-variant-ligatures: common-ligatures;
-  -moz-font-variant-ligatures: common-ligatures;
-  font-variant-ligatures: common-ligatures;
-  text-rendering: optimizeLegibility;
+	-webkit-font-variant-ligatures: common-ligatures;
+	-moz-font-variant-ligatures: common-ligatures;
+	font-variant-ligatures: common-ligatures;
+	text-rendering: optimizeLegibility;
 }
 
 em,
 i {
-  font-style: italic;
-  line-height: inherit;
+	font-style: italic;
+	line-height: inherit;
 }
 
 strong,
 b {
-  font-weight: bold;
-  line-height: inherit;
+	font-weight: bold;
+	line-height: inherit;
 }
 
 small {
-  font-size: 60%;
-  line-height: inherit;
+	font-size: 60%;
+	line-height: inherit;
 }
 
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 li {
-  display: block;
+	display: block;
 }
 
 /* ------------------------------------------------------------------- 
- * ## links
+ * links - (_basic.scss)
  * ------------------------------------------------------------------- */
 a {
-  text-decoration: none;
-  line-height: inherit;
+	text-decoration: none;
+	line-height: inherit;
 }
 
 a img {
-  border: none;
+	border: none;
 }
 
 /* ------------------------------------------------------------------- 
- * ## inputs
+ * inputs - (_basic.scss)
  * ------------------------------------------------------------------- */
 fieldset {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 input[type="email"],
@@ -397,692 +348,480 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
 }
 
-
-
 /* ===================================================================
- * # grid
+ *  03. grid - (_grid.scss)
  *
  * ------------------------------------------------------------------- */
 .row {
-  width: 89%;
-  max-width: 1200px;
-  margin: 0 auto;
+	width: 94%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+.row:before,
+.row:after {
+	content: "";
+	display: table;
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+	clear: both;
 }
 
 .row .row {
-  width: auto;
-  max-width: none;
-  margin-left: -20px;
-  margin-right: -20px;
+	width: auto;
+	max-width: none;
+	margin-left: -20px;
+	margin-right: -20px;
 }
 
-/* column blocks
- * -------------------------------------- */
-[class*="col-"] {
-  float: left;
-  padding: 0 20px;
+[class*="col-"],
+.bgrid {
+	float: left;
 }
 
 [class*="col-"] + [class*="col-"].end {
-  float: right;
+	float: right;
 }
 
-.collapse > [class*="col-"],
-[class*="col-"].collapse {
-  padding: 0;
+[class*="col-"] {
+	padding: 0 20px;
 }
 
-/* column width classes 
- * -------------------------------------- */
 .col-one {
-  width: 8.33333%;
+	width: 8.33333%;
 }
 
 .col-two,
 .col-1-6 {
-  width: 16.66667%;
+	width: 16.66667%;
 }
 
 .col-three,
 .col-1-4 {
-  width: 25%;
+	width: 25%;
 }
 
 .col-four,
 .col-1-3 {
-  width: 50%;
+	width: 33.33333%;
 }
 
 .col-five {
-  width: 41.66667%;
+	width: 41.66667%;
 }
 
 .col-six,
 .col-1-2 {
-  width: 50%;
+	width: 50%;
 }
 
 .col-seven {
-  width: 58.33333%;
+	width: 58.33333%;
 }
 
 .col-eight,
 .col-2-3 {
-  width: 66.66667%;
+	width: 66.66667%;
 }
 
 .col-nine,
 .col-3-4 {
-  width: 75%;
+	width: 75%;
 }
 
 .col-ten,
 .col-5-6 {
-  width: 83.33333%;
+	width: 83.33333%;
 }
 
 .col-eleven {
-  width: 91.66667%;
+	width: 91.66667%;
 }
 
 .col-twelve,
 .col-full {
-  width: 100%;
+	width: 100%;
 }
 
 /* ------------------------------------------------------------------- 
- * ## medium size devices
+ * small screens - (_grid.scss)
  * ------------------------------------------------------------------- */
-@media only screen and (max-width:1200px) {
-  .row .row {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
+@media screen and (max-width:1024px) {
+	.row .row {
+		margin-left: -18px;
+		margin-right: -18px;
+	}
 
-  [class*="col-"] {
-    padding: 0 15px;
-  }
-
-  .md-two,
-  .md-1-6 {
-    width: 16.66667%;
-  }
-
-  .md-one {
-    width: 8.33333%;
-  }
-
-  .md-three,
-  .md-1-4 {
-    width: 25%;
-  }
-
-  .md-four,
-  .md-1-3 {
-    width: 33.33333%;
-  }
-
-  .md-five {
-    width: 41.66667%;
-  }
-
-  .md-six,
-  .md-1-2 {
-    width: 50%;
-  }
-
-  .md-seven {
-    width: 58.33333%;
-  }
-
-  .md-eight,
-  .md-2-3 {
-    width: 66.66667%;
-  }
-
-  .md-nine,
-  .md-3-4 {
-    width: 75%;
-  }
-
-  .md-ten,
-  .md-5-6 {
-    width: 83.33333%;
-  }
-
-  .md-eleven {
-    width: 91.66667%;
-  }
-
-  .md-twelve,
-  .md-full {
-    width: 100%;
-  }
+	[class*="col-"] {
+		padding: 0 18px;
+	}
 
 }
 
 /* ------------------------------------------------------------------- 
- * ## tablets
+ * tablets - (_grid.scss)
  * ------------------------------------------------------------------- */
-@media only screen and (max-width:800px) {
-  .row {
-    width: 90%;
-  }
+@media screen and (max-width:768px) {
+	.row {
+		width: auto;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 
-  .tab-1-4 {
-    width: 25%;
-  }
+	.row .row {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 
-  .tab-1-3 {
-    width: 33.33333%;
-  }
+	[class*="col-"] {
+		padding: 0 15px;
+	}
 
-  .tab-1-2 {
-    width: 50%;
-  }
+	.tab-1-4 {
+		width: 25%;
+	}
 
-  .tab-2-3 {
-    width: 66.66667%;
-  }
+	.tab-1-3 {
+		width: 33.33333%;
+	}
 
-  .tab-3-4 {
-    width: 75%;
-  }
+	.tab-1-2 {
+		width: 50%;
+	}
 
-  .tab-full {
-    width: 100%;
-  }
+	.tab-2-3 {
+		width: 66.66667%;
+	}
 
-  .hide-on-tablet {
-    display: none;
-  }
+	.tab-3-4 {
+		width: 75%;
+	}
+
+	.tab-full {
+		width: 100%;
+	}
 
 }
 
 /* ------------------------------------------------------------------- 
- * ## mobile devices
+ * large mobile devices - (_grid.scss)
  * ------------------------------------------------------------------- */
-@media only screen and (max-width:600px) {
-  .row {
-    width: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-  }
+@media screen and (max-width:600px) {
+	.row {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
 
-  .row .row {
-    margin-left: -10px;
-    margin-right: -10px;
-    padding-left: 0;
-    padding-right: 0;
-  }
+	.row .row {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
 
-  [class*="col-"] {
-    padding: 0 10px;
-  }
+	[class*="col-"] {
+		padding: 0 10px;
+	}
 
-  .mob-1-4 {
-    width: 25%;
-  }
+	.mob-1-4 {
+		width: 25%;
+	}
 
-  .mob-1-3 {
-    width: 33.33333%;
-  }
+	.mob-1-2 {
+		width: 50%;
+	}
 
-  .mob-1-2 {
-    width: 50%;
-  }
+	.mob-3-4 {
+		width: 75%;
+	}
 
-  .mob-2-3 {
-    width: 66.66667%;
-  }
-
-  .mob-3-4 {
-    width: 75%;
-  }
-
-  .mob-full {
-    width: 100%;
-  }
-
-  .hide-on-mobile {
-    display: none;
-  }
+	.mob-full {
+		width: 100%;
+	}
 
 }
 
 /* ------------------------------------------------------------------- 
- * ## small mobile devices
+ * small mobile devices - (_grid.scss)
  * ------------------------------------------------------------------- */
+@media screen and (max-width:400px) {
+	.row .row {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
 
-/* stack columns on small mobile devices
- * ------------------------------------------------------------------- */
-@media only screen and (max-width:400px) {
-  .row .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
+	[class*="col-"] {
+		width: 100% !important;
+		float: none !important;
+		clear: both !important;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 0;
+	}
 
-  [class*="col-"]:not(.col-block) {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-  }
-
-  [class*="col-"] + [class*="col-"].end {
-    float: none;
-  }
-
-  .stack .col-block {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-left: 0;
-    margin-right: 0;
-  }
+	[class*="col-"] + [class*="col-"].end {
+		float: none;
+	}
 
 }
-
-
 
 /* ===================================================================
- * # block grids
+ *  04. block grids - (_grid.scss)
+ *
  * ------------------------------------------------------------------- */
-
-/*  Equally-sized columns define at row level
- * ------------------------------------------------------------------- */
+[class*="block-"]:before,
 [class*="block-"]:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
 }
 
-.block-1-6 .col-block {
-  width: 16.66667%;
+[class*="block-"]:after {
+	clear: both;
 }
 
-.block-1-5 .col-block {
-  width: 20%;
+.block-1-6 .bgrid {
+	width: 16.66667%;
 }
 
-.block-1-4 .col-block {
-  width: 25%;
+.block-1-4 .bgrid {
+	width: 25%;
 }
 
-.block-1-3 .col-block {
-  width: 33.33333%;
+.block-1-3 .bgrid {
+	width: 33.33333%;
 }
 
-.block-1-2 .col-block {
-  width: 50%;
+.block-1-2 .bgrid {
+	width: 50%;
 }
-
-
-
 
 /**
  * Clearing for block grid columns. Allow columns with 
  * different heights to align properly.
  */
-.block-1-6 .col-block:nth-child(6n+1),
-.block-1-5 .col-block:nth-child(5n+1),
-.block-1-4 .col-block:nth-child(4n+1),
-.block-1-3 .col-block:nth-child(3n+1),
-.block-1-2 .col-block:nth-child(2n+1),
-.block-1-1 .col-block:nth-child(1n+1)  {
-  clear: both;
+.block-1-6 .bgrid:nth-child(6n+1),
+.block-1-4 .bgrid:nth-child(4n+1),
+.block-1-3 .bgrid:nth-child(3n+1),
+.block-1-2 .bgrid:nth-child(2n+1) {
+	clear: both;
 }
 
 /* ------------------------------------------------------------------- 
- * ## medium size devices
+ * small screens - (_grid.scss)
  * ------------------------------------------------------------------- */
-@media only screen and (max-width:1200px) {
-  .block-m-1-6 .col-block {
-    width: 16.66667%;
-  }
+@media screen and (max-width:1024px) {
+	.block-s-1-6 .bgrid {
+		width: 16.66667%;
+	}
 
-  .block-m-1-5 .col-block {
-    width: 20%;
-  }
+	.block-s-1-4 .bgrid {
+		width: 25%;
+	}
 
-  .block-m-1-4 .col-block {
-    width: 25%;
-  }
+	.block-s-1-3 .bgrid {
+		width: 33.33333%;
+	}
 
-  .block-m-1-3 .col-block {
-    width: 33.33333%;
-  }
+	.block-s-1-2 .bgrid {
+		width: 50%;
+	}
 
-  .block-m-1-2 .col-block {
-    width: 50%;
-  }
+	.block-s-full .bgrid {
+		width: 100%;
+		clear: both;
+	}
 
-  .block-m-full .col-block {
-    width: 100%;
-    clear: both;
-  }
+	[class*="block-s-"] .bgrid:nth-child(n) {
+		clear: none;
+	}
 
-  [class*="block-m-"] .col-block:nth-child(n) {
-    clear: none;
-  }
-
-  .block-m-1-6 .col-block:nth-child(6n+1),
-  .block-m-1-5 .col-block:nth-child(5n+1),
-  .block-m-1-4 .col-block:nth-child(4n+1),
-  .block-m-1-3 .col-block:nth-child(3n+1),
-  .block-m-1-2 .col-block:nth-child(2n+1) {
-    clear: both;
-  }
+	.block-s-1-6 .bgrid:nth-child(6n+1),
+	.block-s-1-4 .bgrid:nth-child(4n+1),
+	.block-s-1-3 .bgrid:nth-child(3n+1),
+	.block-s-1-2 .bgrid:nth-child(2n+1) {
+		clear: both;
+	}
 
 }
 
 /* ------------------------------------------------------------------- 
- * ## tablets
+ * tablets - (_grid.scss)
  * ------------------------------------------------------------------- */
-@media only screen and (max-width:800px) {
-  .block-tab-1-6 .col-block {
-    width: 16.66667%;
-  }
+@media screen and (max-width:768px) {
+	.block-tab-1-6 .bgrid {
+		width: 16.66667%;
+	}
 
-  .block-tab-1-5 .col-block {
-    width: 20%;
-  }
+	.block-tab-1-4 .bgrid {
+		width: 25%;
+	}
 
-  .block-tab-1-4 .col-block {
-    width: 25%;
-  }
+	.block-tab-1-3 .bgrid {
+		width: 33.33333%;
+	}
 
-  .block-tab-1-3 .col-block {
-    width: 33.33333%;
-  }
+	.block-tab-1-2 .bgrid {
+		width: 50%;
+	}
 
-  .block-tab-1-2 .col-block {
-    width: 50%;
-  }
+	.block-tab-full .bgrid {
+		width: 100%;
+		clear: both;
+	}
 
-  .block-tab-full .col-block {
-    width: 100%;
-    clear: both;
-  }
+	[class*="block-tab-"] .bgrid:nth-child(n) {
+		clear: none;
+	}
 
-  [class*="block-tab-"] .col-block:nth-child(n) {
-    clear: none;
-  }
-
-  .block-tab-1-6 .col-block:nth-child(6n+1),
-  .block-tab-1-5 .col-block:nth-child(5n+1),
-  .block-tab-1-4 .col-block:nth-child(4n+1),
-  .block-tab-1-3 .col-block:nth-child(3n+1),
-  .block-tab-1-2 .col-block:nth-child(2n+1) {
-    clear: both;
-  }
+	.block-tab-1-6 .bgrid:nth-child(6n+1),
+	.block-tab-1-4 .bgrid:nth-child(4n+1),
+	.block-tab-1-3 .bgrid:nth-child(3n+1),
+	.block-tab-1-2 .bgrid:nth-child(2n+1) {
+		clear: both;
+	}
 
 }
 
 /* ------------------------------------------------------------------- 
- * ## mobile devices
+ * large mobile devices - (_grid.scss)
  * ------------------------------------------------------------------- */
-@media only screen and (max-width:600px) {
-  .block-mob-1-6 .col-block {
-    width: 16.66667%;
-  }
+@media screen and (max-width:600px) {
+	.block-mob-1-6 .bgrid {
+		width: 16.66667%;
+	}
 
-  .block-mob-1-5 .col-block {
-    width: 20%;
-  }
+	.block-mob-1-4 .bgrid {
+		width: 25%;
+	}
 
-  .block-mob-1-4 .col-block {
-    width: 25%;
-  }
+	.block-mob-1-3 .bgrid {
+		width: 33.33333%;
+	}
 
-  .block-mob-1-3 .col-block {
-    width: 33.33333%;
-  }
+	.block-mob-1-2 .bgrid {
+		width: 50%;
+	}
 
-  .block-mob-1-2 .col-block {
-    width: 50%;
-  }
+	.block-mob-full .bgrid {
+		width: 100%;
+		clear: both;
+	}
 
-  .block-mob-full .col-block {
-    width: 100%;
-    clear: both;
-  }
+	[class*="block-mob-"] .bgrid:nth-child(n) {
+		clear: none;
+	}
 
-  [class*="block-mob-"] .col-block:nth-child(n) {
-    clear: none;
-  }
-
-  .block-mob-1-6 .col-block:nth-child(6n+1),
-  .block-mob-1-5 .col-block:nth-child(5n+1),
-  .block-mob-1-4 .col-block:nth-child(4n+1),
-  .block-mob-1-3 .col-block:nth-child(3n+1),
-  .block-mob-1-2 .col-block:nth-child(2n+1) {
-    clear: both;
-  }
+	.block-mob-1-6 .bgrid:nth-child(6n+1),
+	.block-mob-1-4 .bgrid:nth-child(4n+1),
+	.block-mob-1-3 .bgrid:nth-child(3n+1),
+	.block-mob-1-2 .bgrid:nth-child(2n+1) {
+		clear: both;
+	}
 
 }
 
+/* ------------------------------------------------------------------- 
+ * stack on small mobile devices - (_grid.scss)
+ * ------------------------------------------------------------------- */
+@media screen and (max-width:400px) {
+	.stack .bgrid {
+		width: 100% !important;
+		float: none !important;
+		clear: both !important;
+		margin-left: 0;
+		margin-right: 0;
+	}
 
+}
 
 /* ===================================================================
- * # MISC
+ *  05. MISC  - (_grid.scss)
  *
  * ------------------------------------------------------------------- */
+
+/* Clearing - (http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+.group:before,
 .group:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
 }
 
-/* Misc Helper Styles
- * -------------------------------------- */
-.is-hidden {
-  display: none;
+.group:after {
+	clear: both;
 }
 
-.is-invisible {
-  visibility: hidden;
+/* Misc Helper Styles 
+ */
+.hide {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
 }
 
 .antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .overflow-hidden {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .remove-bottom {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .half-bottom {
-  margin-bottom: 1.5rem !important;
+	margin-bottom: 1.5rem !important;
 }
 
 .add-bottom {
-  margin-bottom: 3rem !important;
+	margin-bottom: 3rem !important;
 }
 
 .no-border {
-  border: none;
+	border: none;
 }
 
 .full-width {
-  width: 100%;
+	width: 100%;
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .text-left {
-  text-align: left;
+	text-align: left;
 }
 
 .text-right {
-  text-align: right;
+	text-align: right;
 }
 
 .pull-left {
-  float: left;
+	float: left;
 }
 
 .pull-right {
-  float: right;
+	float: right;
 }
 
 .align-center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-/*# sourceMappingURL=base.css.map */
-#about{
-  margin-bottom: 0
-}
-.about-text .flowers{
-  width: 30%
-}
-.about-process{
-  display: flex
-}
-.col-1-about{
-  width: 70%;
-  /* padding-top: 8% */
-}
-.col-2-about{
-  width: 30%
-}
-.mb-0{
-  margin-bottom: 0!important
-}
-.h-100{
-  height: 100%!important;
-}
-.w-100{
-  width: 100%!important;
-}
-.m-0{
-  margin: 0!important
-}
-.pb-0{
-  padding-bottom:  0!important
-}
-@media only screen and (max-width:1150px){
-  .col-1-about{
-    width: 50%;
-    /* padding-top: 5%; */
-    padding-left: 5%
-  }
-  .col-2-about{
-    width: 50%
-  }
-  .flowers{
-    display: none
-  }
-}
-@media only screen and (max-width:930px){
-  .col-1-about{
-    width: 50%;
-    padding-top: 0%;
-    padding-left: 5%
-  }
-  .col-2-about{
-    width: 50%
-  }
-  /* #about{
-    margin-bottom: 3.6rem;
-  } */
-  
-}
-@media only screen and (max-width:870px){
-
-  .col-1-about{
-    width: 100%;
-    padding-left: 5%
-  }
-  .col-2-about{
-    width: 70%;
-    margin-right: 0;
-    margin-left: auto;
-  }
-  .about-process{
-    flex-direction: column
-  }
-
-}
-
-.skills {
-  display: flex;
-  padding: 20px 40px 20px 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-  color: #fff
-}
-
-@media only screen and (min-width: 1150px){
-  .skills article {
-      max-width: 500px;
-  }
-}
-
-.skills article {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    flex-direction: column;
-}
-.skills h4{
-  color: #fff
-}
-.skills ul {
-  margin-left: 0%;
-  margin-bottom: 0%;
-  flex-wrap: wrap;
-  max-width: 400px;
-}
-
-.development, .design {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.skills li {
-  list-style: none;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  margin: 15px;
-  width: 170px;
-}
-
-.skills svg{
-  max-width: 35px;
-  max-height: 35px;
-}
-ul li {
-  padding-left: .4rem;
-}
-
-.skills p {
-  margin: 0px 10px 0px 10px;
-  font-family: "Montserrat", sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
